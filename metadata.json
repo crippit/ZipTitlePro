@@ -1,0 +1,7 @@
+{
+  "name": "ZipTitlePro",
+  "description": "A Smarter Surtitling Solution. High-performance live surtitling with predictive AI tracking.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
