@@ -3,6 +3,10 @@
   "name": "ziptitlepro",
   "private": true,
   "version": "1.0.0",
+  "scripts": {
+    "dev": "tailwindcss -i ./index.css -o ./style.css --watch",
+    "build": "tailwindcss -i ./index.css -o ./style.css"
+  },
   "devDependencies": {
     "tailwindcss": "^3.4.1",
     "postcss": "^8.4.35",
