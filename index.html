@@ -6,100 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZipTitlePro | MD3</title>
   
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <script>
-    // Professional Theme Configuration for MD3 Expressive Palette
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#D0BCFF',
-            'on-primary': '#381E72',
-            'primary-container': '#EADDFF',
-            'on-primary-container': '#21005D',
-            secondary: '#CCC2DC',
-            'secondary-container': '#332D41',
-            tertiary: '#EFB8C8',
-            surface: '#1C1B1F',
-            'on-surface': '#E6E1E5',
-            'surface-container': '#2B2930',
-            outline: '#49454F',
-            error: '#F2B8B5',
-            'on-error': '#601410',
-            success: '#B2FF59',
-          },
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            display: ['Bebas Neue', 'cursive'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="index.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   
-  <style>
-    :root {
-      --md-sys-color-surface: #1C1B1F;
-      --md-sys-color-on-surface: #E6E1E5;
-      --md-sys-color-primary: #D0BCFF;
-      --md-sys-color-secondary: #CCC2DC;
-      --md-sys-color-tertiary: #EFB8C8;
-    }
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--md-sys-color-surface);
-      color: var(--md-sys-color-on-surface);
-      margin: 0;
-      overflow: hidden;
-    }
-    .md3-card {
-      background: #2B2930;
-      border-radius: 28px;
-    }
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 4px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: #49454F;
-      border-radius: 10px;
-    }
-    
-    /* MD3 Expressive Animations */
-    @keyframes pulse-soft {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-    .animate-pulse-soft {
-      animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-
-    @keyframes fade-in {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slide-in-bottom {
-      from { transform: translateY(1.5rem); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .animate-in {
-      animation-duration: 700ms;
-      animation-fill-mode: both;
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-    .fade-in { animation-name: fade-in; }
-    .slide-in-from-bottom-6 { animation-name: slide-in-bottom; }
-  </style>
-
   <script type="importmap">
   {
     "imports": {
