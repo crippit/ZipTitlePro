@@ -6,17 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZipTitlePro | MD3</title>
   
-  <!-- Fix: Suppress Tailwind's production warning before loading the script -->
-  <script>
-    (function() {
-      const originalWarn = console.warn;
-      console.warn = function() {
-        if (arguments[0] && typeof arguments[0] === 'string' && arguments[0].includes('cdn.tailwindcss.com')) return;
-        originalWarn.apply(console, arguments);
-      };
-    })();
-  </script>
-  
   <script src="https://cdn.tailwindcss.com"></script>
   
   <script>
