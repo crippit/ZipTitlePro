@@ -4,8 +4,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "tailwindcss -i ./index.css -o ./style.css --watch",
-    "build": "tailwindcss -i ./index.css -o ./style.css"
+    "dev": "echo 'Running in development mode with Play CDN...'",
+    "build": "mkdir -p dist && cp -rv index.html index.tsx App.tsx types.ts metadata.json components services dist/"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1",

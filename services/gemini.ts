@@ -8,16 +8,17 @@ export const processDocumentWithGemini = async (
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   const systemInstruction = `
-    You are a professional theater script supervisor. 
-    Your task is to take the provided input (text or image) and extract the dialogue into a structured script format.
-    Convert the input into a clean list of lines for surtitles.
-    - Each line should be short and readable (max 80 characters).
-    - If a character is speaking, identify them.
-    - Remove stage directions unless they are critical for timing.
-    - Return a JSON array of objects with 'id' (string), 'text' (string), and 'speaker' (string, optional).
+    You are a professional theater script supervisor and surtitle technician. 
+    Your task is to take the provided input (text or image) and extract the dialogue into a structured script format for live surtitling.
+    - Convert the input into a clean list of lines.
+    - Each line should be short and readable (maximum 80 characters for legibility on stage screens).
+    - If a character is speaking, identify them in the 'speaker' field.
+    - Remove stage directions, parentheticals, or metadata unless they are critical for the spoken dialogue.
+    - Ensure the 'id' is a unique string.
+    - Return a JSON array of objects.
   `;
 
-  const prompt = "Please process this document into a structured theater script for surtitles.";
+  const prompt = "Please process this script into a structured JSON array for surtitling.";
 
   let parts: any[] = [{ text: prompt }];
   
@@ -33,7 +34,7 @@ export const processDocumentWithGemini = async (
   }
 
   const response = await ai.models.generateContent({
-    model: 'gemini-3-flash-preview',
+    model: 'gemini-3-pro-preview',
     contents: { parts },
     config: {
       systemInstruction,
@@ -54,10 +55,11 @@ export const processDocumentWithGemini = async (
   });
 
   try {
-    const result = JSON.parse(response.text || '[]');
+    const text = response.text || '[]';
+    const result = JSON.parse(text);
     return result;
   } catch (e) {
-    console.error("Failed to parse script JSON", e);
+    console.error("Failed to parse script JSON. Model returned:", response.text);
     return [];
   }
 };
